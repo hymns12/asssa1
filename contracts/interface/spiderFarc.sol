@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-import "./spider.sol";
+import '../interface/spide.sol';
 
 contract CalculatorFactory {
-    Calculator[] multiCalculator;
+    spide[] newSpider;
 
-    function createCalculator() external returns (Calculator newCalculator_, uint256 length_) {
-        newCalculator_ = new Calculator();
+    function createCalculator() external returns (spide newCalculator_, uint256 length_) {
+        newCalculator_ = new spide();
 
-        multiCalculator.push(newCalculator_);
+        newSpider.push(newCalculator_);
 
-        length_ = multiCalculator.length;
+        length_ = newSpider.length;
     }
 
-    function getCalculatorClones() external view returns(Calculator[] memory) {
-        return multiCalculator;
+    function getCalculatorClones() external view returns(spide[] memory) {
+        return newSpider;
     }
 }

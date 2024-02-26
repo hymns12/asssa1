@@ -1,10 +1,10 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const CalculatorFactory = await ethers.deployContract("CalculatorFactory");
-  await CalculatorFactory.waitForDeployment();
+  const spiderFarc = await ethers.deployContract("spiderFarc");
+  await spiderFarc.waitForDeployment();
 
-  console.log( `CalculatorFactory deployed to ${CalculatorFactory.target}`);
+  console.log( `spiderFarc deployed to ${spiderFarc.target}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
